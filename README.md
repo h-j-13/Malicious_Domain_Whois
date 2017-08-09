@@ -33,7 +33,14 @@
 #### 数据库架构
 ![](http://upload-images.jianshu.io/upload_images/5617720-a8185913b5221abc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+#### 目录说明
 
+DataAnalysis - 数据分析,特征项抽取    
+DataAquire - 系统数据获取       
+Database - 数据库设计与架构,操作脚本     
+Doc - 系统文档、演示文档、论文      
+EvaluationModel - 系统域名性质判别模型        
+Website - 系统内容展示网站       
 
 ## Features
 
@@ -65,7 +72,7 @@
 GNU GENERAL PUBLIC LICENSE 3.0
 
 ## Contact
-**h-j-13**(@\`13)
-[\`13的博客](http://www.jianshu.com/u/75156f101757)		   
+**h-j-13**(@\`13)      
+[\`13的博客](http://www.jianshu.com/u/75156f101757)   		   
 z.g.13@163.com/h.j.13.new@gmail.com		   
 Harbin Institute of Technology at Weihai      
