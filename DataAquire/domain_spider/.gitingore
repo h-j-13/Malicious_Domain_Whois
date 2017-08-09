@@ -1,0 +1,4 @@
+.idea
+*.pyc
+*.out
+*MyLib*

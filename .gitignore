@@ -1,0 +1,14 @@
+*.log
+*.pyc
+.idea
+*.xml
+out
+*.iml
+*.conf
+# *.ppt
+# *.word
+*.xls
+*.pptx
+*.exe
+*.class
+*.txt

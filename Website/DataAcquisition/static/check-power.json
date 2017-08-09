@@ -1,0 +1,34 @@
+[
+    {
+        "seen": "true",
+        "dnstitle": "ajax测试",
+        "dnskey": "AJAX baidu 搜索 查询 引擎",
+        "dnsanay": "",
+        "powerData": [
+            {
+                "powername": "姓名",
+                "powerinfo": "王小虎"
+            },
+            {
+                "powername": "邮箱",
+                "powerinfo": "王小虎"
+            },
+            {
+                "powername": "地址",
+                "powerinfo": "王小虎"
+            },
+            {
+                "powername": "电话",
+                "powerinfo": "王小虎"
+            },
+            {
+                "powername": "公司",
+                "powerinfo": "王小虎"
+            }
+        ],
+        "dnshot": "80",
+        "dnsno": "10名持平",
+        "dnsloc": "贴吧 bbs",
+        "dnsherf": "www.bilibili.com 木马、www.baidu.com 智障"
+    }
+]

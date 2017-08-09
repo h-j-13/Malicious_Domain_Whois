@@ -1,0 +1,126 @@
+# -*- coding: utf-8 -*-
+import re
+import sys
+import MySQLdb
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+if __name__ == '__main__':
+    connA = MySQLdb.connect(	
+        host ='172.29.152.249',
+        port = 3306,
+        user ='root',
+        passwd ='platform'
+    )
+    connA.set_character_set('utf8')
+    curA = connA.cursor()
+    curA.execute("SET NAMES utf8")
+    curA.execute("use xj_domain_monitoring;")
+    connA.commit()
+    
+    
+
+
+    c_reg_country = r'(?<=Registrant Country\:).*(?=\n)'
+    c_reg_province = r'(?<=Registrant State/Province\:).*(?=\n)'
+    c_reg_city = r'(?<=Registrant City\:).*(?=\n)'
+    c_reg_postal = r'(?<=Registrant Postal Code\:).*(?=\n)'
+    c_reg_street = r'((?<=Registrant Street\:)|(?<=Registrant Address1\:)).*(?=\n)'
+    c_admin_country = r'(?<=Admin Country\:).*(?=\n)'
+    c_admin_province = r'(?<=Admin State/Province\:).*(?=\n)'
+    c_admin_city = r'(?<=Admin City\:).*(?=\n)'
+    c_admin_postal = r'(?<=Admin Postal Code\:).*(?=\n)'
+    c_tech_country = r'(?<=Tech Country\:).*(?=\n)'
+    c_tech_province = r'(?<=Tech State/Province\:).*(?=\n)'
+    c_tech_city = r'(?<=Tech City\:).*(?=\n)'
+    c_tech_postal = r'(?<=Tech Postal Code\:).*(?=\n)'
+    c_country = r'(?<=Country\:).*(?=\n)'
+    c_province = r'(?<=State:).*(?=\n)'
+    c_city = r'(?<=City\:).*(?=\n)'
+    c_postal = r'(?<=Postal Code\:).*(?=\n)'
+    c_street = r'(?<=(Street|Address1)\:).*(?=\n)'
+    '''
+    p_reg_country = re.compile(c_reg_country)
+    p_reg_province = re.compile(c_reg_province)
+    p_reg_city = re.compile(c_reg_city)
+    p_reg_postal = re.compile(c_reg_postal)
+    p_admin_country = re.compile(c_admin_country)
+    p_admin_province = re.compile(c_admin_province)
+    p_admin_city = re.compile(c_admin_city)
+    p_admin_postal = re.compile(c_admin_postal)
+    p_tech_country = re.compile(c_tech_country)
+    p_tech_province = re.compile(c_tech_province)
+    p_tech_city = re.compile(c_tech_city)
+    p_tech_postal = re.compile(c_tech_postal)
+    '''
+    tables = ['whois']
+    i = 1
+    ccc = 0#计数
+    
+    #tables = ['domain_whois_1', 'domain_whois_2', 'domain_whois_3', 'domain_whois_4', 'domain_whois_5', 'domain_whois_6', 'domain_whois_7', 'domain_whois_8', 'domain_whois_9', 'domain_whois_10']
+    print tables
+    for table in tables:
+        
+        countA = curA.execute('select domain,details from %s #where country is null' % (table))
+        #countA = curA.execute('select domain,reg_phone,details from %s WHERE (domain LIKE "%%cn") OR (domain LIKE "%%cc")' % (table))
+        print countA
+        resultA = curA.fetchall()
+
+        for data in resultA:
+            #print data
+            domain = data[0]
+            if data[1] != None:
+                reg_country="CN"
+                try:
+                    reg_province = re.search(c_reg_province, data[1]).group().strip()
+                except:
+                    try:
+                        reg_province = re.search(c_province, data[1]).group().strip()
+                    except:
+                        reg_province = "null"
+                try:
+                    reg_street = re.search(c_reg_street, data[1]).group().strip()
+                except:
+                    try:
+                        reg_street = re.search(c_street, data[1]).group().strip()
+                    except:
+                        reg_street = "null"
+                try:
+                    reg_city = re.search(c_reg_city, data[1]).group().strip()
+                except:
+                    try:
+                        reg_city = re.search(c_city, data[1]).group().strip()
+                    except:
+                        reg_city = "null"
+                try:
+                    reg_postal = re.search(c_reg_postal, data[1]).group().strip()
+                except:
+                    try:
+                        reg_postal = re.search(c_postal, data[1]).group().strip()
+                    except:
+                        reg_postal = "null"
+
+                #为非空结果加上引号
+                if reg_street != "null":
+                    reg_street = "'" + MySQLdb.escape_string(reg_street) + "'"
+                if reg_province != "null":
+                    reg_province = "'" + MySQLdb.escape_string(reg_province) + "'"
+                if reg_city != "null":
+                    reg_city = "'" + MySQLdb.escape_string(reg_city) + "'"
+                if reg_postal != "null":
+                    reg_postal = "'" + MySQLdb.escape_string(reg_postal) + "'"
+
+                try:
+                    curA.execute('UPDATE whois SET country="%s",province=%s,city=%s,postal_code=%s,street=%s WHERE domain = "%s"' % (reg_country,reg_province,reg_city,reg_postal,reg_street,domain))
+                    ccc += 1
+                    connA.commit()
+                except:
+                    print 'UPDATE whois SET country="%s",province=%s,city=%s,postal_code=%s,street=%s WHERE domain = "%s"' % (MySQLdb.escape_string(reg_country),MySQLdb.escape_string(reg_province.lower()),MySQLdb.escape_string(reg_city.lower()),MySQLdb.escape_string(reg_postal),MySQLdb.escape_string(reg_street),MySQLdb.escape_string(domain))
+        connA.commit()
+        print '%s finashed' % (table)
+    print ccc
+        
+
+
+
+

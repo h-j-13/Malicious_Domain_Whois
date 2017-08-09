@@ -1,0 +1,15 @@
+*.class
+*.out
+*.o
+*.pyc
+*~
+META-INF/
+# Binary Files #
+*.jar
+!dbMaker-*.jar
+# Package Files #
+.settings/
+.classpath
+.project
+# vim swp file #
+*.swp

@@ -1,0 +1,28 @@
+def Baidu_get_raw_html(wd):
+	urls = []
+	page = 0
+	ini_payload = {'wd': wd, 'pn': str(0)}
+	ini_html = requests.get('https://www.baidu.com/s', params=ini_payload, headers=headers, timeout=5).text
+	total_pages = re.compile(r'<div class="search_tool" ><i class="c-icon searchTool-spanner c-icon-setting"></i>.+?(</div>.+?</div>)</div></div>').findall(ini_html)[0].replace(',', '')
+	total_pages = int(re.compile(r'</div>.*?(\d+).*</div>').findall(total_pages)[0])
+	for page in range(0, 100, 10):
+		payload = {'wd': wd, 'pn': str(page)}
+		html = requests.get('https://www.baidu.com/s', params=payload, headers=headers, timeout=5).text
+		urls = urls + re.compile(r'<a target="_blank" href=".+?" class="c-showurl" style=".*?">([^>]+?)\/&nbsp;</a>').findall(html)
+	print 'Baidu ' + str(len(urls))
+	print urls
+
+
+def Bing_get_raw_html(wd):
+	urls = []
+	ini_payload = {'q': wd, 'go': 'Submit', 'first': str(0)}
+	ini_html = requests.get('http://cn.bing.com/search', params=ini_payload, headers=headers, timeout=5).text
+	total_pages = re.compile(r'<span class="sb_count">(.+?)</span><span class="ftrB">').findall(ini_html)[0].split(' ')[0].replace(',', '')
+	total_pages = int(total_pages)
+	print total_pages
+	for page in range(0, 30, 10):
+		payload = {'q': wd, 'go': 'Submit', 'first': str(page)}
+		html = requests.get('http://cn.bing.com/search', params=payload, headers=headers, timeout=5).text
+		urls = urls + re.compile(r'<li class="b_algo"><h2><a target="_blank" href="http://(.+?)" h=".+?"').findall(html)
+	print 'Bing ' + str(len(urls))
+	print urls
