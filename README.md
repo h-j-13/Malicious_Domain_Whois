@@ -1,6 +1,6 @@
 非法域名挖掘与画像系统
 =====================
-![](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)![](https://img.shields.io/badge/Python-2.7.12%2B-blue.svg)![](https://img.shields.io/badge/MySQL-5.7.18%2B-blue.svg)![](https://img.shields.io/badge/license-AGPL-blue.svg)![](https://img.shields.io/badge/Power%20By-702229122-red.svg)    
+![](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)![](https://img.shields.io/github/forks/h-j-13/Malicious_Domain_Whois.svg)![](https://img.shields.io/github/stars/h-j-13/Malicious_Domain_Whois.svg)![](https://img.shields.io/badge/license-AGPL-blue.svg)![](https://img.shields.io/badge/Python-2.7.12%2B-yellow.svg)![](https://img.shields.io/badge/MySQL-5.7.18%2B-yellow.svg)![](https://img.shields.io/badge/Power%20By-702229122-red.svg)    
 **2017年第十届全国大学生信息安全大赛** 参赛项目 决赛-三等奖
 
 基于页面关联关系的非法域名分析与挖掘系统。旨在通过域名多元信息对域名进行精准画像，进而分析抽象获取非法域名相关特征，使用基于决策树的机器学习模型进行域名性质判定。通过多过程多方式进行恶意域名挖掘
