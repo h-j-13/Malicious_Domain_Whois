@@ -1,0 +1,186 @@
+{
+    "nodes": [
+        {
+            "color": "#4f19c7",
+            "label": "jquery",
+            "attributes": {},
+            "y": -404.26147,
+            "x": -739.36383,
+            "id": "jquery",
+            "size": 4.7252817
+        },
+        {
+            "color": "#c71969",
+            "label": "backbone",
+            "attributes": {},
+            "y": -862.7517,
+            "x": -134.2215,
+            "id": "backbone",
+            "size": 6.1554675
+        },
+        {
+            "color": "#c71969",
+            "label": "underscore",
+            "attributes": {},
+            "y": -734.4221,
+            "x": -75.53079,
+            "id": "underscore",
+            "size": 100
+        },
+        {
+            "color": "#c71969",
+            "label": "faye",
+            "attributes": {},
+            "y": 624.50604,
+            "x": -818.97516,
+            "id": "faye",
+            "size": 0.67816025
+        },
+        {
+            "color": "#c71919",
+            "label": "socket.io",
+            "attributes": {},
+            "y": 120.37976,
+            "x": -710.59204,
+            "id": "socket.io",
+            "size": 19.818306
+        },
+        {
+            "color": "#c71969",
+            "label": "requirejs",
+            "attributes": {},
+            "y": -612.5541,
+            "x": 71.52897,
+            "id": "requirejs",
+            "size": 4.0862627
+        },
+        {
+            "color": "#c71969",
+            "label": "amdefine",
+            "attributes": {},
+            "y": -556.3107,
+            "x": 1202.1166,
+            "id": "amdefine",
+            "size": 2.3822114
+        },
+        {
+            "color": "#1984c7",
+            "label": "mongoose",
+            "attributes": {},
+            "y": 378.15536,
+            "x": -1150.2018,
+            "id": "mongoose",
+            "size": 10.81118
+        },
+        {
+            "color": "#c76919",
+            "label": "underscore.deferred",
+            "attributes": {},
+            "y": 477.03778,
+            "x": -127.03764,
+            "id": "underscore.deferred",
+            "size": 0.40429485
+        },
+        {
+            "color": "#8419c7",
+            "label": "cheerio",
+            "attributes": {},
+            "y": -404.62427,
+            "x": -338.03128,
+            "id": "cheerio",
+            "size": 8.163814
+        }
+    ],
+    "edges": [
+        {
+            "sourceID": "jquery",
+            "attributes": {},
+            "targetID": "jsdom",
+            "size": 1
+        },
+        {
+            "sourceID": "jquery",
+            "attributes": {},
+            "targetID": "xmlhttprequest",
+            "size": 1
+        },
+        {
+            "sourceID": "jquery",
+            "attributes": {},
+            "targetID": "htmlparser",
+            "size": 1
+        },
+        {
+            "sourceID": "jquery",
+            "attributes": {},
+            "targetID": "contextify",
+            "size": 1
+        },
+        {
+            "sourceID": "backbone",
+            "attributes": {},
+            "targetID": "underscore",
+            "size": 1
+        },
+        {
+            "sourceID": "faye",
+            "attributes": {},
+            "targetID": "faye-websocket",
+            "size": 1
+        },
+        {
+            "sourceID": "faye",
+            "attributes": {},
+            "targetID": "cookiejar",
+            "size": 1
+        },
+        {
+            "sourceID": "socket.io",
+            "attributes": {},
+            "targetID": "redis",
+            "size": 1
+        },
+        {
+            "sourceID": "socket.io",
+            "attributes": {},
+            "targetID": "socket.io-client",
+            "size": 1
+        },
+        {
+            "sourceID": "mongoose",
+            "attributes": {},
+            "targetID": "mongodb",
+            "size": 1
+        },
+        {
+            "sourceID": "mongoose",
+            "attributes": {},
+            "targetID": "hooks",
+            "size": 1
+        },
+        {
+            "sourceID": "mongoose",
+            "attributes": {},
+            "targetID": "ms",
+            "size": 1
+        },
+        {
+            "sourceID": "cheerio",
+            "attributes": {},
+            "targetID": "underscore",
+            "size": 1
+        },
+        {
+            "sourceID": "cheerio",
+            "attributes": {},
+            "targetID": "htmlparser2",
+            "size": 1
+        },
+        {
+            "sourceID": "cheerio",
+            "attributes": {},
+            "targetID": "entities",
+            "size": 1
+        }
+    ]
+}

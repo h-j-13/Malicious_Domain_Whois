@@ -1,0 +1,34 @@
+{
+    "domainNum": [
+        {
+            "name": "河北",
+            "allDomain": 12333,
+            "maliciousDomain": 2343
+        },
+        {
+            "name": "山东",
+            "allDomain": 43222,
+            "maliciousDomain": 12343
+        }
+    ],
+    "domainData": [
+        {
+            "domain": "baidu.com",
+            "nature": "赌博",
+            "score": 46,
+            "name": "赵四",
+            "phone": "12345678909",
+            "email": "342dfs@126.com",
+            "province": "北京"
+        },
+        {
+            "domain": "baidu.com",
+            "nature": "赌博",
+            "score": 46,
+            "name": "赵四",
+            "phone": "12345678909",
+            "email": "342dfs@126.com",
+            "province": "北京"
+        }
+    ]
+}
