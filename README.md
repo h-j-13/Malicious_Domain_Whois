@@ -1,9 +1,6 @@
 非法域名挖掘与画像系统
 =====================
-<<<<<<< HEAD
 ![](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)![](https://img.shields.io/github/forks/h-j-13/Malicious_Domain_Whois.svg)![](https://img.shields.io/github/stars/h-j-13/Malicious_Domain_Whois.svg)![](https://img.shields.io/badge/license-AGPL-blue.svg)![](https://img.shields.io/badge/Python-2.7.12%2B-yellow.svg)![](https://img.shields.io/badge/MySQL-5.7.18%2B-yellow.svg)![](https://img.shields.io/badge/Power%20By-702229122-red.svg)    
-=======
->>>>>>> pr/3
 **2017年第十届全国大学生信息安全大赛** 参赛项目 决赛-三等奖
 <!-- TOC -->
 
