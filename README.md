@@ -52,8 +52,7 @@
 
 DataAnalysis - 数据分析,特征项抽取    
 DataAquire - 系统数据获取       
-Database - 数据库设计与架构,操作脚本     
-Doc - 系统文档、演示文档、论文      
+Database - 数据库设计与架构,操作脚本        
 EvaluationModel - 系统域名性质判别模型        
 Website - 系统内容展示网站       
 
